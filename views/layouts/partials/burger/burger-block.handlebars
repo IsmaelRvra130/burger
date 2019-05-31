@@ -1,7 +1,8 @@
 <li>
-	{{name}}
+    {{<p>{{this.id}}. {{this.burger_name}}</p>}}
+    <button class "devour" data-id="{{this.id}}" data-devour="{{this.devour}}">
+        {{#if this.devour}}eat me{{else}}already eaten{{/if}}
+    </button>
+<!--    <button type="{{this.devour}}" class="devour">Devour</button>-->
 
-	<button class="change-devour" data-id="{{id}}" data-newdevour="{{this.devour}}">
-		{{#if this.devour}}devour!{{else}}WAKE UP!{{/if}}
-	</button>
 </li>

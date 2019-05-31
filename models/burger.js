@@ -14,10 +14,11 @@ var burger = {
         });
     },
     updateOne: function(objColVals,condition, cb) {
-        var condition = "id=" + id;
+        //var condition = "id=" + id;
         orm.updateOne("burgers",objColVals,condition,function(res) {
-            devoured: true
-        }, condition, cb);
+            cb(res);
+            //devoured: true
+        });// condition, cb);
     }
 };
 

@@ -6,11 +6,11 @@ var burger = require('../models/burger.js');
 
 // Create the routes and associated logic
 router.get("/", function(req, res){
-  res.redirect("/burger");
+  res.redirect("/burgers");
 })
 
 
-router.get('/burger', function(req, res) {
+router.get('/burgers', function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
       burger: data
@@ -20,24 +20,24 @@ router.get('/burger', function(req, res) {
   });
 });
 
-router.post('/burger', function(req, res) {
+router.post('/burgers', function(req, res) {
   burger.insertOne([
     'burger_name', 'devoured'
   ], [
     req.body.burger_name, req.body.devoured
   ], function() {
-    res.redirect('/burger');
+    res.redirect('/burgers');
   });
 });
 
-router.put('/burger/:id', function(req, res) {
+router.put('/burgers/:id', function(req, res) {
   var condition = 'id = ' + req.params.id;
 
   burger.updateOne({
     devoured: true
   }, condition, function() {
     
-    res.redirect('/burger');
+    res.redirect('/burgers');
   });
 });
 

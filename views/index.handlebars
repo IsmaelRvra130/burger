@@ -11,25 +11,25 @@
         {{#each burger}}
           {{#unless this.devoured}}
 
-          <p>{{this.id}}.{{this.burger_name}}</p>
-          <form action="/burgers/{{this.id}}" method="POST">
+          <p>{{this.id}}. {{this.burger_name}}
+           <form action="/burgers/"{{this.id}} method="POST">
           <input type="hidden" name="_method" value="put">
-          {{!-- <form>
-              <input type="hidden" class="burger_id" value={{this.id}}>  --}}
-          <button type="submit" value={{this.id}}>Devour it!</button>
-          </form>
-        
+           <button type="submit" class="btn btn-primary btn-sm" value={{this.id}}>Devour it!</button>
+          </form> 
+          </p>
+
           {{/unless}}
         {{/each}}
       </div>
 
       <div class="col-sm">
           <h2>Add A Burger</h2>
-        <form action="/burgers/create" method="POST">
-        <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
-        <button type="submit" class="addBurger">{{this.id}}.{{this.burger_name}}.{{this.devoured}}Add The Burger</button><br><br>
+          
+         <form action="/burgers" method="POST">
+        <input type="text" id="name" name="burger_name" placeholder="Delicious Burgers here">
+        <button type="submit" class="btn btn-primary btn-sm">{{this.id}} {{this.burger_name}} {{this.devoured}}Add The Burger</button><br><br>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM-64Fwomj0zm8HSiUZwDRBlUEfA8Nehw6AcK0fVQ9wCQoQhH4ig" width="200px" height="200px">
-        </form>
+        </form> 
         
     <br>
     <br>

@@ -74,6 +74,7 @@ function printQuestionMarks(num) {
       queryString += condition;
   
       console.log(queryString);
+      console.log("you are here!");
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;

@@ -13,8 +13,8 @@
 
           <p>{{this.id}}. {{this.burger_name}}
            <form action="/burgers/"{{this.id}} method="POST">
-          <input type="hidden" name="_method" value="put">
-           <button type="submit" class="btn btn-primary btn-sm" value={{this.id}}>Devour it!</button>
+          <input type="hidden" name="_method" value="true">
+           <button type="submit" class="btn btn-primary btn-sm" id="devoured" value={{this.id}}>Devour it!</button>
           </form> 
           </p>
 
@@ -25,11 +25,11 @@
       <div class="col-sm">
           <h2>Add A Burger</h2>
           
-         <form action="/burgers" method="POST">
-        <input type="text" id="name" name="burger_name" placeholder="Delicious Burgers here">
+          <form action="/burgers" method="POST">
+        <input type="text" id="name"  placeholder="Delicious Burgers here">
         <button type="submit" class="btn btn-primary btn-sm">{{this.id}} {{this.burger_name}} {{this.devoured}}Add The Burger</button><br><br>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM-64Fwomj0zm8HSiUZwDRBlUEfA8Nehw6AcK0fVQ9wCQoQhH4ig" width="200px" height="200px">
-        </form> 
+        </form>  
         
     <br>
     <br>
@@ -46,19 +46,23 @@
         {{/each}}
     </div>
 </main>
-{{!-- <script>
-     $("form").on("submit", function(event) {
-    event.preventDefault();
 
-    var burger_id = $(this).children(".burger_id").val();
-    console.log(burger_id);
-    $.ajax({
-      method: "PUT",
-      url: "/burgers/" + burger_id
-    }).then(function(data) {
-      // reload page to display devoured burger in proper column
-      location.reload();
+<script>
+  $(function() {
+    $("#devoured").on("click", function(event) {
+      var id = $(this).data("id");
+      var toDevour = $(this).data("devoured");
+      var wasDevoured = {
+        devoured: true
+      };
+      $.ajax("burgers" + id, {
+        type: "PUT",
+        data: wasDevoured
+      }).then(function() {
+        console.log("changed devour to", toDevour);
+        location.reload();
+      });
     });
+});
 
-  });
-</script> --}}
+</script>

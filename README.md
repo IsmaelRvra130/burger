@@ -18,7 +18,9 @@ In this assignment, you'll create a burger logger with MySQL, Node, Express, Han
 
 # Alex's Notes
 
-## ok, I've added to this repo the suggested solution for this homework.
+## ok, I've added to this repo the suggested solution for this homework. 
+
+# PULL OUT the soulution folder from this repo and copy it in a separate place to reference so that you may run you application normally and nothing weird happends
 
 I fixed a couple bugs which you can see in the commit history.
 

@@ -12,9 +12,9 @@
           {{#unless this.devoured}}
 
           <p>{{this.id}}. {{this.burger_name}}
-           <form action="/burgers/"{{this.id}} method="POST">
-          <input type="hidden" name="_method" value="true">
-           <button type="submit" class="btn btn-primary btn-sm" id="devoured" value={{this.id}}>Devour it!</button>
+           <form action="/burgers/"{{this.id}} method="put">
+          <input type="hidden" class="burger_id" type="text" value={{this.id}}>
+           <button type="submit" class="btn btn-primary btn-sm" id="devoured">Devour it!</button>
           </form> 
           </p>
 
@@ -26,8 +26,8 @@
           <h2>Add A Burger</h2>
           
           <form action="/burgers" method="POST">
-        <input type="text" id="name"  placeholder="Delicious Burgers here">
-        <button type="submit" class="btn btn-primary btn-sm">{{this.id}} {{this.burger_name}} {{this.devoured}}Add The Burger</button><br><br>
+        <input type="text" id="name"  name="burger_name" placeholder="Delicious Burgers here">
+        <button type="submit" class="btn btn-primary btn-sm">Add The Burger</button><br><br>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM-64Fwomj0zm8HSiUZwDRBlUEfA8Nehw6AcK0fVQ9wCQoQhH4ig" width="200px" height="200px">
         </form>  
         

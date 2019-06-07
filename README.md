@@ -10,27 +10,12 @@ Your app will store every burger in a database, whether devoured or not.
 Check out this video of the app for a run-through of how it works.
 
 
-<h2>Node Express Handlebars</h2>
-Overview:
+<h2>Technologies used:</h2>
 <br>
+    <ul>Node.js
+    <ul>Express
+    <ul>Handlebars
+    <ul>Mysql
+    <ul>Bootstrap
+
 In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTM
-
-
-# Alex's Notes
-
-## ok, I've added to this repo the suggested solution for this homework. 
-
-# PULL OUT the soulution folder from this repo and copy it in a separate place to reference so that you may run you application normally and nothing weird happends
-
-I fixed a couple bugs which you can see in the commit history.
-
-From here.... you should be able to debug your homework and figure out what was wrong as you go along. 
-
-You should be Googling along to find out what certain html attributes do and why they are used and anything else that looks unfamiliar. 
-
-I believe that using the commit where I have fixed a couple bugs along with the suggested solution you should be able to figure out multiple places where you might have went wrong. 
-
-Once you've fixed all the bugs and it works. 
-
-See if you can do it from scratch again while looking up EVERYTHING you don't understand.
-

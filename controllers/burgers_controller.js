@@ -9,17 +9,6 @@ router.get("/", function(req, res){
   res.redirect("/burgers");
 })
 
-
-// router.get("/burgers", function(req, res) {
-//   burger.all(function(burgerData) {
-//     var hbsObject = {
-//       burger: data
-//     };
-//      //console.log(hbsObject);
-//     res.render('index', hbsObject);
-//   });
-// });
-
 router.get("/burgers", function(req, res){
   burger.all(function(burgerData){
     res.render("index", { burger_data: burgerData});
@@ -40,27 +29,6 @@ router.put("/burgers/:id", function(req,res){
     res.sendStatus(200);
   });
 });
-
-// router.post("/burgers", function(req, res) {
-//   burger.insertOne([
-//     "burger_name", 'devoured'
-//   ], [
-//     req.body.burger_name, false
-//   ], function() {
-//     res.redirect('/burgers');
-//   });
-// });
-
-// router.put("/burgers/:id", function(req, res) {
-//   var condition = 'id = ' + req.params.id;
-
-//   burger.updateOne({
-//     devoured: true
-//   }, condition, function() {
-    
-//     res.redirect('/burgers');
-//   });
-// });
 
 // Export routes for server.js to use.
 module.exports = router;
